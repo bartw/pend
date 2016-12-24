@@ -16,3 +16,6 @@ services:
       - "3000:3000"
     depends_on:
       - db
+    volumes:
+      - ./server:/server
+      - /server/node_modules
