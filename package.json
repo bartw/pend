@@ -1,6 +1,6 @@
 {
   "name": "pend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "pend is Postgres Express Node Docker",
   "main": "index.js",
   "scripts": {
