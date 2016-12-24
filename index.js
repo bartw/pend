@@ -1,10 +1,16 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var pgp = require('pg-promise')();
+var db = pgp('postgres://pender:p3nd@db:5432/pend');
+var app = express();
 
 app.get('/', function (req, res) {
-  res.send('Hello world, you are seeing this from docker!')
-})
+    db.one('SELECT $1 AS value', 123).then(function (data) {
+        res.send('Data:' + data.value);
+    }).catch(function (error) {
+        res.send('Error:' + error);
+    });
+});
 
 app.listen(3000, function () {
-  console.log('hello world from express in docker!')
-})
+    console.log('hello world from express in docker!');
+});

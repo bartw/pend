@@ -1,4 +1,14 @@
+db:
+  image: postgres:latest
+  environment:
+    - POSTGRES_USER=pender
+    - POSTGRES_PASSWORD=p3nd
+    - POSTGRES_DB=pend
+  ports:
+    - "5432:5432"
 pend:
   build: .
   ports:
     - "3000:3000"
+  links:
+    - db
