@@ -2,6 +2,7 @@ version: '2'
 
 services:
   db:
+    container_name: db
     image: postgres:latest
     environment:
       - POSTGRES_USER=pender
@@ -11,7 +12,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./database/pgdata:/pgdata
+      - pgdata:/pgdata
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   server:
@@ -23,3 +24,6 @@ services:
     volumes:
       - ./server:/server
       - /server/node_modules
+
+volumes:
+  pgdata:
