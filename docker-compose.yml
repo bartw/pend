@@ -7,8 +7,12 @@ services:
       - POSTGRES_USER=pender
       - POSTGRES_PASSWORD=p3nd
       - POSTGRES_DB=pend
+      - PGDATA=/pgdata
     ports:
       - "5432:5432"
+    volumes:
+      - ./database/pgdata:/pgdata
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   server:
     build: .
