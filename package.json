@@ -1,0 +1,26 @@
+{
+  "name": "pend",
+  "version": "0.0.1",
+  "description": "pend is Postgres Express Node Docker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bartw/pend.git"
+  },
+  "keywords": [
+    "postgress",
+    "express",
+    "node",
+    "docker",
+    "docker-compose"
+  ],
+  "author": "Bart Wijnants",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/bartw/pend/issues"
+  },
+  "homepage": "https://github.com/bartw/pend#readme"
+}
